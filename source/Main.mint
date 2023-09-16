@@ -39,18 +39,20 @@ component Main {
   style list {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    align-items: center;
   }
 
   style example {
     background: #eee;
-    border-radius: 12px;
+    border-radius: 8px;
     margin: 12px 0;
     padding: 24px;
+    width: 50%;
+    min-width: 640px;
   }
 
   style content {
-    border: 1px solid grey;
+    border: 1px solid #bbb;
     padding: 8px;
     border-radius: 8px;
   }
