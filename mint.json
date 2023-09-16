@@ -1,0 +1,5 @@
+{
+  "name": "mint-micromark",
+  "source-directories": ["source"],
+  "test-directories": ["tests"]
+}
