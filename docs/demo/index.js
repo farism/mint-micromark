@@ -185,28 +185,34 @@ var Mint=function(){"use strict";var t,e,n,r,o,i,a={},s=[],u=/acit|ex(?:s|g|n|p|
       }
 
       return false
-    })())}az(ba,bb){return (()=>{const _0 = [];const _1 = ba;let _i = -1;for(let bc of _1){_i++;_0.push(bb(bc))};return _0})()}});const AN=new(class extends _M{bd(be){return _match(be,[[_PE(AT,[]),(()=>{return [`directive`, `directiveHtml`]})],[_PE(AQ,[]),(()=>{return [`frontmatter`, `frontmatterHtml`]})],[_PE(AL,[]),(()=>{return [`gfm`, `gfmHtml`]})],[_PE(AM,[]),(()=>{return [`math`, `mathHtml`]})],[_PE(AR,[]),(()=>{return [`mdx`, `mdxHtml`]})]])}bf(bg){return _match(bg,[[_PE(AT,[]),(()=>{return this.bh})],[_PE(AQ,[]),(()=>{return this.bi})],[_PE(AL,[]),(()=>{return this.bj})],[_PE(AM,[]),(()=>{return this.bk})],[_PE(AR,[]),(()=>{return this.bl})]])}async l(bm = [],bn = false,bo = false,bp = ``){const br=await (import(this.bq).then(m => m.micromark));const bt=AK.az(bm, AN.bs);const bu=await (Promise.all(bt));const bw=AK.az(bu, ((bv)=>{return bv[0]}));const by=AK.az(bu, ((bx)=>{return bx[1]}));return ((bz)=>{return ((() => {
+    })())}az(ba,bb){return (()=>{const _0 = [];const _1 = ba;let _i = -1;for(let bc of _1){_i++;_0.push(bb(bc))};return _0})()}});const AN=new(class extends _M{bd(){return ((() => {
+      const baseTag = document.getElementsByTagName('base')[0]
+
+      return baseTag
+        ? baseTag.getAttribute('href')
+        : ''
+    })())}be(bf){return _match(bf,[[_PE(AT,[]),(()=>{return [`directive`, `directiveHtml`]})],[_PE(AQ,[]),(()=>{return [`frontmatter`, `frontmatterHtml`]})],[_PE(AL,[]),(()=>{return [`gfm`, `gfmHtml`]})],[_PE(AM,[]),(()=>{return [`math`, `mathHtml`]})],[_PE(AR,[]),(()=>{return [`mdx`, `mdxHtml`]})]])}bg(bh){return _match(bh,[[_PE(AT,[]),(()=>{return this.bi})],[_PE(AQ,[]),(()=>{return this.bj})],[_PE(AL,[]),(()=>{return this.bk})],[_PE(AM,[]),(()=>{return this.bl})],[_PE(AR,[]),(()=>{return this.bm})]])}async l(bn = [],bo = false,bp = false,bq = ``){const bs=`${AN.bd()}${this.br}`;const bt=await (import(bs).then(m => m.micromark));const bv=AK.az(bn, AN.bu);const bw=await (Promise.all(bv));const by=AK.az(bw, ((bx)=>{return bx[0]}));const ca=AK.az(bw, ((bz)=>{return bz[1]}));return ((cb)=>{return ((() => {
         try {
-          const $md = br(bz, {
-            extensions: bw,
-            htmlExtensions: by,
-            allowDangerousHtml: bn,
-            allowDangerousProtocol: bo,
-            defaultLineEnding: bp
+          const $md = bt(cb, {
+            extensions: by,
+            htmlExtensions: ca,
+            allowDangerousHtml: bo,
+            allowDangerousProtocol: bp,
+            defaultLineEnding: bq
           })
 
           return $md
         } catch($e) {
           return $e.message
         }
-      })())})}bs(ca){const cb=AN.bf(ca);const cc=AN.bd(ca);const cd=cc[0];const ce=cc[1];return (import(cb).then(m => {
-      const syntax = m[cd] ? m[cd]() : null
-      const html = m[ce] ? m[ce]() : null
+      })())})}bu(cc){const cd=AN.bg(cc);const ce=AN.be(cc);const cf=ce[0];const cg=ce[1];const ch=`${AN.bd()}${cd}`;return (import(ch).then(m => {
+      const syntax = m[cf] ? m[cf]() : null
+      const html = m[cg] ? m[cg]() : null
 
       return [syntax, html]
-    }))}constructor(){super();this._d({bq:(()=>{return `assets/micromark@4.0.0_b2a5090c80f7889880def14f9e0e7084.js`}),bh:(()=>{return `assets/micromark-extension-directive@3.0.0_185ba960101fed8fc17a747c47f73944.js`}),bi:(()=>{return `assets/micromark-extension-frontmatter@2.0.0_ff52af9dc4ff9d17b0478f79d8bab6a1.js`}),bj:(()=>{return `assets/micromark-extension-gfm@3.0.0_05de1c15cdb23627bafaec2205352d12.js`}),bk:(()=>{return `assets/micromark-extension-math@3.0.0_6026ccb6618744e30d4ae0c63da5ef5a.js`}),bl:(()=>{return `assets/micromark-extension-mdx@2.0.0_df6e69b8dd3d5ec9ad354407aae42df0.js`})})}});class AH extends _C{constructor(props){super(props);this._d({a:["children",[]]})}render(){return (_createPortal(this.a, document.head))}};;class AI extends _C{constructor(props){super(props);this._d({d:[null,``],m:[null,false],n:[null,false],o:[null,``],j:[null,[new AL()]],h:[null,true]});this.state = new Record({b:new AO()})}get f(){return (this.h ? `markdown-body` : ``)}get b(){return this.state.b;}async componentDidMount(){(this.h && AK.i(this.j, new AL()) ? B.g() : null);(this.h && AK.i(this.j, new AM()) ? A.k() : null);const p=await AN.l(this.j, this.m, this.n, this.o);return new Promise(((_resolve)=>{this.setState(_u(this.state, new Record({b:new AJ(p)})), _resolve)
+    }))}constructor(){super();this._d({br:(()=>{return `assets/micromark@4.0.0_b2a5090c80f7889880def14f9e0e7084.js`}),bi:(()=>{return `assets/micromark-extension-directive@3.0.0_185ba960101fed8fc17a747c47f73944.js`}),bj:(()=>{return `assets/micromark-extension-frontmatter@2.0.0_ff52af9dc4ff9d17b0478f79d8bab6a1.js`}),bk:(()=>{return `assets/micromark-extension-gfm@3.0.0_05de1c15cdb23627bafaec2205352d12.js`}),bl:(()=>{return `assets/micromark-extension-math@3.0.0_6026ccb6618744e30d4ae0c63da5ef5a.js`}),bm:(()=>{return `assets/micromark-extension-mdx@2.0.0_df6e69b8dd3d5ec9ad354407aae42df0.js`})})}});class AH extends _C{constructor(props){super(props);this._d({a:["children",[]]})}render(){return (_createPortal(this.a, document.head))}};;class AI extends _C{constructor(props){super(props);this._d({d:[null,``],m:[null,false],n:[null,false],o:[null,``],j:[null,[new AL()]],h:[null,true]});this.state = new Record({b:new AO()})}get f(){return (this.h ? `markdown-body` : ``)}get b(){return this.state.b;}async componentDidMount(){(this.h && AK.i(this.j, new AL()) ? B.g() : null);(this.h && AK.i(this.j, new AM()) ? A.k() : null);const p=await AN.l(this.j, this.m, this.n, this.o);return new Promise(((_resolve)=>{this.setState(_u(this.state, new Record({b:new AJ(p)})), _resolve)
 }))}render(){return _h(React.Fragment, {}, [_match(this.b,[[_PE(AJ,[_PV]),((c)=>{return (()=>{const e=c(this.d);return _h("div", {"dangerouslySetInnerHTML":({__html: e}),className:this.f})})()})],[null,(()=>{return null})]])])}};;class $A extends _C{constructor(props){super(props);this.state = new Record({q:false})}get q(){return this.state.q;}k(){return (this.q ? null : new Promise(((_resolve)=>{this.setState(_u(this.state, new Record({q:true})), _resolve)
-})))}render(){return (this.q ? _h(AH, {}, _array(_h("link", {"rel":`stylesheet`,"href":`${`assets/katex.min_09b67732753fe0586733e13f4c0628f1.css`}`}))) : null)}_persist(){A=this}};;let A;class $B extends _C{constructor(props){super(props);this.state = new Record({r:false})}get r(){return this.state.r;}g(){return (this.r ? null : new Promise(((_resolve)=>{this.setState(_u(this.state, new Record({r:true})), _resolve)
+})))}render(){return (this.q ? _h(AH, {}, _array(_h("link", {"rel":`stylesheet`,"href":`${`assets/katex.min_f9d930872cad4c25a3d02fcb1bd8084a.css`}`}))) : null)}_persist(){A=this}};;let A;class $B extends _C{constructor(props){super(props);this.state = new Record({r:false})}get r(){return this.state.r;}g(){return (this.r ? null : new Promise(((_resolve)=>{this.setState(_u(this.state, new Record({r:true})), _resolve)
 })))}render(){return (this.r ? _h(AH, {}, _array(_h("link", {"rel":`stylesheet`,"href":`${`assets/github-markdown.min_d86eb4600bc8bfe914e7b335840c49c6.css`}`}))) : null)}_persist(){B=this}};;let B;class C extends _C{constructor(props){super(props);this.state = new Record({at:0,u:`This is *plain* markdown, **no extensions** enabled\n\n* list items`,x:`# This is an H1`,z:`## This is an H2`,ab:`### This is an H3`,ad:`#### This is an H4`,af:`##### This is an H5`,ah:`###### This is an H6`,aj:`---\na: b\n---\n# Using frontmatter doesn't matter`,al:`~~GFM extension enabled~~`,an:`|header|\n|-|\n|cell|`,ap:`Lift($L$) can be determined by Lift Coefficient ($C_L$) like the following equation.\n$$\nL = \\frac{1}{2} \\rho v^2 S C_L\n$$`,ar:`mdx extension
   
   a <b /> c {1 + 1} d

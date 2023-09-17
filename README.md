@@ -84,3 +84,7 @@ However, the [Crystal shard](https://github.com/icyleaf/markd) used to enable th
 # Non-goals
 
 - Be fully featured. This package intentionally uses Micromark as the underlying markdown engine because micromark about as minimal as it can get.
+
+# Building docs
+
+`mint build --skip-icons --skip-service-worker --relative && rm -rf docs/demo && mv dist docs/demo`

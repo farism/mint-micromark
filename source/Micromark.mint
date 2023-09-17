@@ -1,10 +1,23 @@
 module Micromark {
   const DIRECTIVE = @asset(../assets/micromark-extension-directive@3.0.0.js)
+  const FONT_DIRECTIVE = @asset(../assets/fonts/KaTeX_AMS-Regular.woff2)
   const FRONTMATTER = @asset(../assets/micromark-extension-frontmatter@2.0.0.js)
   const GFM = @asset(../assets/micromark-extension-gfm@3.0.0.js)
   const MATH = @asset(../assets/micromark-extension-math@3.0.0.js)
   const MDX = @asset(../assets/micromark-extension-mdx@2.0.0.js)
   const MICROMARK = @asset(../assets/micromark@4.0.0.js)
+
+  fun baseUrl {
+    `
+    (() => {
+      const baseTag = document.getElementsByTagName('base')[0]
+
+      return baseTag
+        ? baseTag.getAttribute('href')
+        : ''
+    })()
+    `
+  }
 
   /* Maps extension names to their respective named exports for syntax and html */
   fun extensionImports (extension : Micromark.Extension) : Tuple(String, String) {
@@ -35,8 +48,11 @@ module Micromark {
     allowDangerousProtocol : Bool = false,
     defaultLineEnding : String = ""
   ) : Promise(Function(String, String)) {
+    let url =
+      "#{baseUrl()}#{MICROMARK}"
+
     let micromark =
-      await `import(#{MICROMARK}).then(m => m.micromark)`
+      await `import(#{url}).then(m => m.micromark)`
 
     let loaders =
       Array.map(extensions, loadExtension)
@@ -85,8 +101,11 @@ module Micromark {
     let html =
       imports[1]
 
+    let url =
+      "#{baseUrl()}#{path}"
+
     `
-    import(#{path}).then(m => {
+    import(#{url}).then(m => {
       const syntax = m[#{syntax}] ? m[#{syntax}]() : null
       const html = m[#{html}] ? m[#{html}]() : null
 
