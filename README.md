@@ -4,6 +4,8 @@
 
 [Mint](https://mint-lang.com/) package for converting markdown to html. Uses [Micromark](https://github.com/micromark/micromark) under the hood.
 
+# [Demo](https://farism.github.io/mint-micromark/demo)
+
 # Basic usage
 
 The easiest way to use Micromark is with `Micromark.Component`:
